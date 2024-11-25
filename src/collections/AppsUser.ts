@@ -5,6 +5,7 @@ const AppUser: CollectionConfig = {
   access: {
     create: () => true,
     read: () => true,
+    update: () => true,
   },
   fields: [
     {
@@ -14,8 +15,9 @@ const AppUser: CollectionConfig = {
     },
     {
       name: "email",
-      type: "text",
+      type: "email",
       required: true,
+      unique: true,
     },
     {
       name: "password",
@@ -36,6 +38,16 @@ const AppUser: CollectionConfig = {
       name: "role",
       type: "text",
       required: true,
+    },
+    {
+      name: "events",
+      type: "array",
+      fields: [
+        {
+          name: "eventName",
+          type: "text",
+        },
+      ],
     },
   ],
 };

@@ -2,7 +2,11 @@ import { CollectionConfig } from "payload/types";
 
 const Events: CollectionConfig = {
   slug: "events",
-
+  access: {
+    create: () => true,
+    read: () => true,
+    update: () => true,
+  },
   fields: [
     {
       name: "eventName",
@@ -61,6 +65,20 @@ const Events: CollectionConfig = {
       name: "subtitle",
       type: "text",
       required: true,
+    },
+    {
+      name: "attenddie",
+      type: "array",
+      fields: [
+        {
+          name: "appUser",
+          type: "text",
+        },
+        {
+          name: "userId",
+          type: "text",
+        },
+      ],
     },
   ],
 };
