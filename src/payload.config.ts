@@ -10,6 +10,7 @@ import Users from "./collections/Users";
 import Test from "./collections/Test";
 import Events from "./collections/Events";
 import AppUser from "./collections/AppsUser";
+import UserEvents from "./collections/UserEvents";
 
 export default buildConfig({
   admin: {
@@ -17,7 +18,7 @@ export default buildConfig({
     bundler: webpackBundler(),
   },
   editor: slateEditor({}),
-  collections: [Users, Test, Events, AppUser],
+  collections: [Users, Test, Events, AppUser, UserEvents],
   typescript: {
     outputFile: path.resolve(__dirname, "payload-types.ts"),
   },
